@@ -7,155 +7,229 @@
 <meta name="description" content="Study skills for essay-heavy degrees. Learn what makes a good essay work, take notes that build your argument, and research faster with NotebookLM. Never essay writing.">
 <meta property="og:title" content="Synthessay">
 <meta property="og:description" content="Learn what makes a good essay work, take notes that build your argument, and research faster with NotebookLM.">
-<meta property="og:image" content="https://synthessay.com/profile-picture.png">
+<meta property="og:image" content="https://synthessay.com/hero.jpg">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" href="profile-picture.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500..700&amp;family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&amp;family=Instrument+Sans:wght@400..700&amp;display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500;1,600&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0..100,0..1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Courier+Prime&family=Caveat:wght@500;600&family=Inter:wght@400;500;600&display=swap">
 <style>
-body{margin:0;background:#FBF8F1}
-a{color:#131A33}a:hover{color:#C4111C}
-</style>
-<style>html{scroll-behavior:smooth}*{box-sizing:border-box}</style>
-<style>
-@media (max-width: 560px){
-  .paper-text{font-size:12px !important; white-space:nowrap; left:72px !important}
-  .paper-note{font-size:24px !important; bottom:22px !important}
-  .example{padding-left:84px !important}
-  .example > div:first-child{left:72px !important}
-  .example > div:nth-child(2){width:58px !important; left:8px !important; font-size:18px !important}
-}
+  :root{
+    --ink:#141416; --ink-2:#1B1C1F; --gunmetal:#2C2F34; --pewter:#7B7F86; --silver:#C4C7CC;
+    --crimson:#A31226; --crimson-hi:#C21A30; --bone:#E8E2D6; --bone-dim:rgba(232,226,214,0.72); --line:rgba(196,199,204,0.16);
+    --metal:linear-gradient(160deg,#F4F5F7 0%,#A9ADB4 45%,#E6E8EB 62%,#868A91 100%);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ink);color:var(--bone);font-family:'EB Garamond',Georgia,serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--bone)} a:hover{color:var(--silver)}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+  .sans{font-family:Inter,'Helvetica Neue',Arial,sans-serif}
+  .mono{font-family:'Courier Prime',monospace}
+  .display{font-family:'Cormorant Garamond',Georgia,serif}
+  .kicker{display:inline-block;font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:.18em;text-transform:uppercase;background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .metal{background:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  header{border-bottom:1px solid transparent;border-image:linear-gradient(90deg,transparent,#868A91 20%,#E6E8EB 50%,#868A91 80%,transparent) 1}
+  header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:18px;padding-bottom:18px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+  .brand span{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:26px;color:var(--bone);letter-spacing:-.01em}
+  nav{display:flex;flex-wrap:wrap;gap:22px;font-family:Inter,Arial,sans-serif;font-size:14px;font-weight:500}
+  nav a{text-decoration:none;color:var(--bone-dim)} nav a:hover{color:var(--bone)}
+
+  .hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:56px;padding-top:64px;padding-bottom:88px}
+  .hero-text{flex:999 1 440px;min-width:0}
+  .hero h1{margin:18px 0 0;font-family:Fraunces,Georgia,serif;font-variation-settings:'SOFT' 100,'WONK' 1,'opsz' 144;font-weight:650;font-size:clamp(50px,7.2vw,96px);line-height:1.0;letter-spacing:-.025em;color:#F3EFE7}
+  .hero h1 em{font-style:normal;color:var(--crimson-hi)}
+  .circled{position:relative;display:inline-block;padding:0 .08em}
+  .circled svg{position:absolute;left:-.2em;top:-.12em;width:calc(100% + .4em);height:calc(100% + .22em);overflow:visible;pointer-events:none}
+  .card .num{font-family:'Caveat',cursive;font-weight:600;font-size:56px;line-height:1;color:var(--crimson-hi)}
+  .lede{margin:28px 0 0;max-width:34em;font-size:20px;line-height:1.6;color:var(--bone-dim)}
+  .ctas{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;font-family:'EB Garamond',Georgia,serif;font-size:18px;font-weight:500;letter-spacing:.01em;text-decoration:none;transition:background .15s ease,border-color .15s ease}
+  .btn-primary{background:linear-gradient(180deg,#C21A30,#A31226 55%,#8A0F1F);color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 6px 18px rgba(163,18,38,.35)} .btn-primary:hover{background:linear-gradient(180deg,#D3243B,#B3162C 55%,#951222);color:#fff}
+  .btn-ghost{border:1px solid transparent;background:linear-gradient(var(--ink),var(--ink)) padding-box,var(--metal) border-box;color:var(--bone)} .btn-ghost:hover{background:linear-gradient(#1F2024,#1F2024) padding-box,var(--metal) border-box;color:#fff}
+  .note{margin-top:14px;font-family:'Courier Prime',monospace;font-size:13px;letter-spacing:.06em;color:var(--pewter)}
+  .hero-photo{flex:1 1 400px;min-width:0;display:flex;justify-content:center}
+  .essay{position:relative;width:100%;max-width:440px;height:530px;border-radius:3px;background-color:var(--bone);background-image:repeating-linear-gradient(var(--bone) 0px,var(--bone) 33px,rgba(44,47,52,.16) 33px,rgba(44,47,52,.16) 34px);background-position:0 58px;box-shadow:0 0 0 1px rgba(230,232,235,.25),0 30px 80px rgba(0,0,0,.6);transform:rotate(1.6deg);overflow:hidden}
+  .essay::before{content:"";position:absolute;top:0;bottom:0;left:62px;width:2px;background:rgba(163,18,38,.6)}
+  .essay-text{position:absolute;left:82px;right:24px;top:66px;font-family:'EB Garamond',Georgia,serif;font-size:15.5px;line-height:34px;color:#2A2522}
+  .essay-text .q{font-weight:600}
+  .essay-text u{text-decoration-color:var(--crimson);text-decoration-thickness:2px;text-underline-offset:4px}
+  .ink{position:absolute;font-family:'Caveat',cursive;color:var(--crimson)}
+  .ink-margin{left:4px;top:228px;width:56px;font-size:21px;line-height:1;transform:rotate(-8deg);text-align:center}
+  .ink-end{right:18px;bottom:40px;font-size:30px;transform:rotate(-5deg)}
+
+  section.band{border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,#868A91 20%,#E6E8EB 50%,#868A91 80%,transparent) 1}
+  h2{background:linear-gradient(170deg,#F7F7F8 0%,#C9CCD1 40%,#F1F2F4 58%,#A3A7AE 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  section.band .wrap{padding-top:88px;padding-bottom:88px}
+  h2{margin:12px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(34px,4.4vw,52px);line-height:1.05;letter-spacing:-.01em;color:var(--bone)}
+  h2 i{font-weight:500}
+  .feature,.card{border:1px solid transparent;background:linear-gradient(160deg,#1E1F23,#18191C) padding-box,linear-gradient(160deg,rgba(244,245,247,.55),rgba(134,138,145,.12) 38%,rgba(230,232,235,.4) 62%,rgba(134,138,145,.12)) border-box}
+  .feature{margin-top:44px;display:flex;flex-wrap:wrap;gap:40px;align-items:center;padding:clamp(24px,4vw,44px);border-radius:6px}
+  .feature-text{flex:1 1 320px;min-width:0}
+  .feature h3,.card h3{margin:8px 0 12px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:30px;line-height:1.1;color:var(--bone)}
+  .feature p,.card p{margin:0;color:var(--bone-dim)}
+  .tag{display:inline-block;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--crimson-hi)}
+  .page{flex:1 1 420px;min-width:0;position:relative;padding:26px 24px 26px 104px;border-radius:3px;background-color:var(--bone);background-image:repeating-linear-gradient(var(--bone) 0px,var(--bone) 33px,rgba(44,47,52,.14) 33px,rgba(44,47,52,.14) 34px);color:#2A2522;font-size:15.5px;line-height:34px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+  .page::before{content:"";position:absolute;top:0;bottom:0;left:88px;width:2px;background:rgba(163,18,38,.55)}
+  .page .labels{position:absolute;left:8px;top:26px;width:72px;display:flex;flex-direction:column;text-align:right;font-family:'Courier Prime',monospace;font-size:12px;line-height:34px;letter-spacing:.04em;color:var(--crimson)}
+  .page mark{background:rgba(163,18,38,.12);color:inherit}
+  .page u{text-decoration-color:var(--crimson);text-decoration-thickness:2px;text-underline-offset:4px}
+  .cards{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+  .card{padding:32px;border-radius:6px}
+  .card .num{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:48px;line-height:1}
+  .steps{margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+
+  .honest{background:linear-gradient(160deg,#3A3E44 0%,#2C2F34 40%,#363A40 58%,#25282C 100%);border-top:1px solid rgba(230,232,235,.35);border-bottom:1px solid rgba(230,232,235,.2)}
+  .honest .wrap{display:flex;flex-wrap:wrap;gap:36px;align-items:center;justify-content:space-between;padding-top:80px;padding-bottom:80px}
+  .honest .text{flex:999 1 420px;min-width:0}
+  .honest h2{margin:0}
+  .honest h2 span{color:var(--crimson-hi);-webkit-text-fill-color:#E0384D}
+  .honest p{margin:20px 0 0;max-width:40em;color:var(--bone-dim)}
+
+  footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;padding-top:36px;padding-bottom:48px;font-family:Inter,Arial,sans-serif;font-size:13px;color:var(--pewter)}
+  footer a{color:var(--pewter)} footer a:hover{color:var(--bone)}
+
+  @media (max-width:560px){
+    .hero .wrap{padding-top:40px;padding-bottom:64px;gap:40px}
+    .essay-text{font-size:12px;white-space:nowrap;left:72px}
+    .ink-end{font-size:24px;bottom:22px}
+    .page{padding-left:84px;font-size:14px}
+    .page::before{left:70px}
+    .page .labels{width:56px;font-size:11px}
+  }
 </style>
 </head>
 <body>
-<div style="width: 100%; background: #FBF8F1; color: #131A33; font-family: 'Instrument Sans', 'Helvetica Neue', Arial, sans-serif;">
 
-  <header style="max-width: 1200px; margin: 0 auto; padding: 22px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
-    <a href="#top" aria-label="Synthessay home" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
-      <svg width="46" height="28" viewBox="0 0 80 48" aria-hidden="true"><circle cx="10" cy="34" r="6" fill="#131A33"></circle><circle cx="33" cy="31" r="9" fill="#131A33"></circle><circle cx="63" cy="27" r="13" fill="#E3121F"></circle></svg>
-      <span style="font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: 28px; letter-spacing: -0.02em; color: #131A33; line-height: 1;">Synthessay<span style="color: #E3121F;">.</span></span>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Synthessay home">
+      <svg width="46" height="28" viewBox="0 0 80 48" aria-hidden="true">
+        <defs><linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F5F7"/><stop offset="0.45" stop-color="#A9ADB4"/><stop offset="0.62" stop-color="#E6E8EB"/><stop offset="1" stop-color="#868A91"/></linearGradient>
+        <radialGradient id="ruby" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#E0384D"/><stop offset="0.55" stop-color="#B3162C"/><stop offset="1" stop-color="#7E0D1C"/></radialGradient></defs>
+        <circle cx="10" cy="34" r="6" fill="url(#silver)"/><circle cx="33" cy="31" r="9" fill="url(#silver)"/><circle cx="63" cy="27" r="13" fill="url(#ruby)"/>
+      </svg>
+      <span class="metal">Synthessay</span>
     </a>
-    <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 26px; align-items: center; font-size: 15px; font-weight: 500;">
-      <a href="#what" style="text-decoration: none;">What you'll learn</a>
-      <a href="#guide" style="text-decoration: none;">Free guide</a>
-      <a href="#how" style="text-decoration: none;">How it works</a>
-      <a href="https://www.instagram.com/synthessay/" style="text-decoration: none;">Instagram</a>
-      <a href="https://www.tiktok.com/@synthessay.essay" style="text-decoration: none;">TikTok</a>
+    <nav aria-label="Main">
+      <a href="#inside">What's in the guide</a>
+      <a href="#guide">Free guide</a>
+      <a href="https://www.instagram.com/remember.2.study/">Instagram</a>
+      <a href="https://www.tiktok.com/@remember.2.study">TikTok</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <section id="top" style="max-width: 1200px; margin: 0 auto; padding: 56px 32px 88px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
-    <div style="flex: 999 1 460px; min-width: 0;">
-      <p style="margin: 0 0 22px; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C4111C;">Study skills for essay-heavy degrees</p>
-      <h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: clamp(44px, 6.4vw, 78px); line-height: 1.02; letter-spacing: -0.02em;">Helping your thoughts <span style="position: relative; display: inline-block; padding: 0 6px;">flow<svg viewBox="0 0 220 110" aria-hidden="true" preserveAspectRatio="none" style="position: absolute; left: -14px; top: -10px; width: calc(100% + 28px); height: calc(100% + 18px); overflow: visible;"><path d="M30 18 C 90 -6, 205 4, 212 50 C 218 96, 70 112, 22 84 C -12 62, 14 22, 96 12" fill="none" stroke="#E3121F" stroke-width="5" stroke-linecap="round"></path></svg></span> on the page.</h1>
-      <p style="margin: 28px 0 0; max-width: 46ch; font-size: 19px; line-height: 1.6; color: #3A4060;">Learn what makes a good essay work, take notes that actually build your argument, and get through your reading list faster with NotebookLM. So you can write strong essays yourself, consistently.</p>
-      <div id="guide" style="margin-top: 36px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
-        <a href="synthessay-guide.pdf?v=2" style="display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #131A33; color: #FBF8F1; text-decoration: none; font-weight: 600; font-size: 16px;">Get the free NotebookLM guide</a>
-        <a href="mailto:hello@synthessay.com?subject=Premium%20waitlist" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1.5px solid #131A33; color: #131A33; text-decoration: none; font-weight: 600; font-size: 16px;">Premium guide - join the waitlist</a>
-      </div>
-      <div style="margin-top: 14px; display: flex; align-items: center; gap: 8px; font-family: Caveat, cursive; font-size: 28px; color: #C4111C;">
-        <svg width="46" height="34" viewBox="0 0 46 34" aria-hidden="true"><path d="M42 30 C 30 30, 14 24, 8 6 M8 6 L 3 16 M8 6 L 17 11" fill="none" stroke="#E3121F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-        <span>it's free - 6 pages, no catch</span>
-      </div>
-    </div>
-
-    <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center;">
-      <div role="img" aria-label="An essay page marked up in red pen" style="position: relative; width: 100%; max-width: 440px; aspect-ratio: 4 / 5; background: #FFFFFF; border-radius: 6px; box-shadow: 0 1px 2px rgba(19,26,51,0.06), 0 18px 50px rgba(19,26,51,0.12); transform: rotate(1.6deg); overflow: hidden; background-image: repeating-linear-gradient(#FFFFFF 0px, #FFFFFF 33px, #D9E2EF 33px, #D9E2EF 34px); background-position: 0 58px;">
-        <div style="position: absolute; top: 0; bottom: 0; left: 62px; width: 2px; background: rgba(227,18,31,0.55);"></div>
-        <div class="paper-text" style="position: absolute; left: 82px; right: 26px; top: 66px; font-family: Fraunces, Georgia, serif; font-variation-settings: 'opsz' 14; font-size: 15px; line-height: 34px; color: #2A3150;">
-          <div style="font-weight: 600;">To what extent did print change</div>
-          <div style="font-weight: 600;">religious authority in early</div>
-          <div style="font-weight: 600;">modern England?</div>
-          <div>&nbsp;</div>
-          <div>Historians have long argued that the</div>
-          <div>printing press <span style="text-decoration: underline; text-decoration-color: #E3121F; text-decoration-thickness: 2px; text-underline-offset: 4px;">weakened the Church's</span></div>
-          <div><span style="text-decoration: underline; text-decoration-color: #E3121F; text-decoration-thickness: 2px; text-underline-offset: 4px;">grip on belief</span>, yet the evidence</div>
-          <div>from parish records suggests a slower,</div>
-          <div>more uneven story...</div>
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <div class="kicker">study skills for essay-heavy degrees</div>
+        <h1>Helping your thoughts <span class="circled">flow<svg viewBox="0 0 220 110" preserveAspectRatio="none" aria-hidden="true"><path d="M30 18 C 90 -6, 205 4, 212 50 C 218 96, 70 112, 22 84 C -12 62, 14 22, 96 12" fill="none" stroke="#C21A30" stroke-width="5" stroke-linecap="round"/></svg></span> on the page<em>.</em></h1>
+        <p class="lede">Learn what makes a good essay work, take notes that actually build your argument, and get through your reading list faster with NotebookLM. So you can write strong essays yourself, consistently.</p>
+        <div class="ctas" id="guide">
+          <a class="btn btn-primary" href="synthessay-guide.pdf?v=3">Get the free essay guide</a>
+          <a class="btn btn-ghost" href="mailto:hello@synthessay.com?subject=Premium%20guide%20waitlist">Premium guide - join the waitlist</a>
         </div>
-        <div style="position: absolute; left: 6px; top: 228px; width: 54px; font-family: Caveat, cursive; font-size: 21px; line-height: 1; color: #C4111C; transform: rotate(-8deg); text-align: center;">which ones?</div>
-        <div class="paper-note" style="position: absolute; right: 18px; bottom: 40px; font-family: Caveat, cursive; font-size: 30px; color: #C4111C; transform: rotate(-5deg);">clear argument ✓</div>
+        <div class="note">free · 6 pages · no catch</div>
       </div>
-    </div>
-  </section>
-
-  <section id="what" style="max-width: 1200px; margin: 0 auto; padding: 24px 32px 96px; box-sizing: border-box;">
-    <p style="margin: 0 0 14px; font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: #C4111C;">What makes Synthessay different</p>
-    <h2 style="margin: 0; max-width: 22ch; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: clamp(32px, 4vw, 46px); line-height: 1.1; letter-spacing: -0.01em;">Not just tools. The thinking behind a good essay.</h2>
-
-    <div style="margin-top: 44px; padding: clamp(24px, 4vw, 44px); border-radius: 18px; background: #FFFFFF; border: 1px solid #E8E2D4; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
-      <div style="flex: 1 1 320px; min-width: 0;">
-        <div style="font-family: Caveat, cursive; font-weight: 700; font-size: 30px; color: #C4111C;">the bit most guides skip</div>
-        <h3 style="margin: 6px 0 14px; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: clamp(28px, 3vw, 36px); line-height: 1.1;">Essay logic, shown with real examples</h3>
-        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3A4060;">Example essay paragraphs, annotated line by line to explain why they work: the point, the evidence, the analysis and the link back to the question. Once you can see what markers reward, you can do it yourself, essay after essay.</p>
-      </div>
-      <div class="example" role="img" aria-label="An example paragraph annotated in red pen: point, evidence, analysis, link" style="flex: 1 1 420px; min-width: 0; position: relative; padding: 26px 26px 26px 112px; border-radius: 8px; background-color: #FFFFFF; background-image: repeating-linear-gradient(#FFFFFF 0px, #FFFFFF 33px, #D9E2EF 33px, #D9E2EF 34px); box-shadow: 0 1px 2px rgba(19,26,51,0.06), 0 12px 32px rgba(19,26,51,0.10); font-family: Fraunces, Georgia, serif; font-variation-settings: 'opsz' 14; font-size: 15px; line-height: 34px; color: #2A3150;">
-        <div style="position: absolute; top: 0; bottom: 0; left: 96px; width: 2px; background: rgba(227,18,31,0.55);"></div>
-        <div style="position: absolute; left: 10px; top: 26px; width: 80px; display: flex; flex-direction: column; font-family: Caveat, cursive; font-size: 22px; line-height: 34px; color: #C4111C; text-align: right;">
-          <span>point</span>
-          <span>&nbsp;</span>
-          <span>evidence</span>
-          <span>&nbsp;</span>
-          <span>analysis</span>
-          <span>&nbsp;</span>
-          <span>link</span>
-        </div>
-        <span style="background: rgba(227,18,31,0.10);">Print did not overturn religious authority overnight; it changed who could argue about it.</span> <span style="text-decoration: underline; text-decoration-color: #E3121F; text-decoration-thickness: 2px; text-underline-offset: 4px;">By the 1640s, cheap pamphlets let ordinary readers debate doctrine in their own words.</span> This suggests authority shifted from owning the text to interpreting it, a slower and more uneven change than the "revolution" story implies, <span style="background: rgba(227,18,31,0.10);">which is why the question's "to what extent" matters.</span>
-      </div>
-    </div>
-
-    <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px;">
-      <div style="padding: 32px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E8E2D4;">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#E3121F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
-        <h3 style="margin: 16px 0 10px; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: 28px; line-height: 1.15;">Active note-taking</h3>
-        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3A4060;">Stop copying out the reading. Learn to take notes that question, connect and condense, so your notes are already the start of your argument.</p>
-      </div>
-      <div style="padding: 32px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E8E2D4;">
-        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#E3121F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5z"></path><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"></path></svg>
-        <h3 style="margin: 16px 0 10px; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: 28px; line-height: 1.15;">Faster research with NotebookLM</h3>
-        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #3A4060;">A step-by-step workflow with prompts to copy, for getting through a reading list in a fraction of the time, while the thinking stays yours.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="how" style="background: #FFFFFF; border-top: 1px solid #E8E2D4; border-bottom: 1px solid #E8E2D4;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px; box-sizing: border-box;">
-      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: clamp(32px, 4vw, 46px); letter-spacing: -0.01em;">Three stages. Your thinking stays yours.</h2>
-      <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px;">
-        <div style="padding: 28px; border-radius: 14px; background: #FBF8F1;">
-          <div style="font-family: Caveat, cursive; font-weight: 700; font-size: 54px; line-height: 1; color: #E3121F;">1</div>
-          <h3 style="margin: 12px 0 8px; font-size: 21px;">Source</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3A4060;">Load your reading list into NotebookLM and find what each text actually argues, fast.</p>
-        </div>
-        <div style="padding: 28px; border-radius: 14px; background: #FBF8F1;">
-          <div style="font-family: Caveat, cursive; font-weight: 700; font-size: 54px; line-height: 1; color: #E3121F;">2</div>
-          <h3 style="margin: 12px 0 8px; font-size: 21px;">Synthesize</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3A4060;">Spot where sources link, clash and leave gaps. Find out what they argue. This will help you build your own argument.</p>
-        </div>
-        <div style="padding: 28px; border-radius: 14px; background: #FBF8F1;">
-          <div style="font-family: Caveat, cursive; font-weight: 700; font-size: 54px; line-height: 1; color: #E3121F;">3</div>
-          <h3 style="margin: 12px 0 8px; font-size: 21px;">Write</h3>
-          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3A4060;">Structure it, then write every sentence yourself, with checks that keep it that way.</p>
+      <div class="hero-photo">
+        <div class="essay" role="img" aria-label="An essay page marked up in red ink">
+          <div class="essay-text">
+            <div class="q">To what extent did print change</div>
+            <div class="q">religious authority in early</div>
+            <div class="q">modern England?</div>
+            <div>&nbsp;</div>
+            <div>Historians have long argued that the</div>
+            <div>printing press <u>weakened the Church's</u></div>
+            <div><u>grip on belief</u>, yet the evidence</div>
+            <div>from parish records suggests a slower,</div>
+            <div>more uneven story...</div>
+          </div>
+          <div class="ink ink-margin">which ones?</div>
+          <div class="ink ink-end">clear argument ✓</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section style="background: #131A33; color: #FBF8F1;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 84px 32px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between;">
-      <div style="flex: 999 1 420px; min-width: 0;">
-        <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-variation-settings: 'SOFT' 100, 'WONK' 1, 'opsz' 144; font-weight: 600; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1;">Study skills and essay logic, <span style="position: relative; white-space: nowrap;">not essay writing.<svg viewBox="0 0 400 30" aria-hidden="true" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: -14px; width: 100%; height: 16px;"><path d="M6 20 C 90 8, 210 4, 300 13 S 380 24, 394 11" fill="none" stroke="#E3121F" stroke-width="7" stroke-linecap="round"></path></svg></span></h2>
-        <p style="margin: 26px 0 0; max-width: 54ch; font-size: 17px; line-height: 1.65; color: rgba(251,248,241,0.78);">Synthessay teaches you how to research, take notes and understand what makes an essay work. Nothing here writes your essay for you, and you should always follow your university's AI policy.</p>
+  <section class="band" id="inside">
+    <div class="wrap">
+      <div class="kicker">what's in the guide</div>
+      <h2>Not just tools. <i>The thinking behind a good essay.</i></h2>
+
+      <div class="feature">
+        <div class="feature-text">
+          <span class="tag">the bit most guides skip</span>
+          <h3>Essay logic, shown with real examples</h3>
+          <p>Example essay paragraphs, annotated line by line to explain why they work: the point, the evidence, the analysis and the link back to the question. Once you can see what markers reward, you can do it yourself, essay after essay.</p>
+        </div>
+        <div class="page" role="img" aria-label="An example paragraph annotated in red: point, evidence, analysis, link">
+          <div class="labels"><span>point</span><span>&nbsp;</span><span>evidence</span><span>&nbsp;</span><span>analysis</span><span>&nbsp;</span><span>link</span></div>
+          <mark>Print did not overturn religious authority overnight; it changed who could argue about it.</mark> <u>By the 1640s, cheap pamphlets let ordinary readers debate doctrine in their own words.</u> This suggests authority shifted from owning the text to interpreting it, a slower and more uneven change than the "revolution" story implies, <mark>which is why the question's "to what extent" matters.</mark>
+        </div>
       </div>
-      <a href="synthessay-guide.pdf?v=2" style="flex: none; display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; background: #E3121F; color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 16px;">Get the free guide</a>
+
+      <div class="cards">
+        <div class="card">
+          <span class="tag">notes</span>
+          <h3>Active note-taking</h3>
+          <p>Stop copying out the reading. Learn to take notes that question, connect and condense, so your notes are already the start of your argument.</p>
+        </div>
+        <div class="card">
+          <span class="tag">research</span>
+          <h3>Faster research with NotebookLM</h3>
+          <p>A step-by-step workflow with prompts to copy, for getting through a reading list in a fraction of the time, while the thinking stays yours.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer style="max-width: 1200px; margin: 0 auto; padding: 36px 32px 48px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; font-size: 14px; color: #5A6080;">
-    <span>© <span data-year>2026</span> Synthessay · hello@synthessay.com</span>
-    <span>Instagram @synthessay · TikTok @synthessay.essay</span>
-  </footer>
-</div>
+  <section class="band" id="how">
+    <div class="wrap">
+      <div class="kicker">how it works</div>
+      <h2>Three stages. <i>Your thinking stays yours.</i></h2>
+      <div class="steps">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>Source</h3>
+          <p>Load your reading list into NotebookLM and find what each text actually argues, fast.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <h3>Synthesize</h3>
+          <p>Spot where sources link, clash and leave gaps. Find out what they argue. This will help you build your own argument.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <h3>Write</h3>
+          <p>Structure it, then write every sentence yourself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="honest">
+    <div class="wrap">
+      <div class="text">
+        <h2>Study skills and essay logic, <span>not essay writing.</span></h2>
+        <p>Everything here teaches you how to research, take notes and understand what makes an essay work. Nothing writes your essay for you, and you should always follow your university's AI policy.</p>
+      </div>
+      <a class="btn btn-primary" href="synthessay-guide.pdf?v=3">Get the free guide</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span data-year>2026</span> Synthessay · <a href="mailto:hello@synthessay.com">hello@synthessay.com</a></span>
+    <span>Study edits and tips on Instagram and TikTok @remember.2.study</span>
+  </div>
+</footer>
+
 <script>try{document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()})}catch(e){}</script>
 </body>
 </html>
